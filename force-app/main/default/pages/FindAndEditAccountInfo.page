@@ -1,0 +1,32 @@
+<apex:page controller="FindAndEditAccountInfoController" tabStyle="Contact">
+    
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:sectionHeader title="Welcome back, {!$User.FirstName} {!$User.LastName}!"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Your Account Information:">
+            <apex:outputField value="{!userContact.FirstName}"/>
+            <apex:outputField value="{!userContact.LastName}"/>
+            <apex:outputField value="{!userContact.Birthdate}"/>
+            <apex:outputField value="{!userContact.Email}"/>
+            <apex:outputField value="{!userContact.Phone}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Edit Account Information">
+            <apex:form >
+                First Name: <apex:inputText value="{!userContact.FirstName}"/>
+                Last Name: <apex:inputText value="{!userContact.LastName}"/><br/>
+                Birthdate: <apex:inputField value="{!userContact.Birthdate}"/><br/>
+                Email: <apex:inputField value="{!userContact.Email}"/><br/>
+                Phone: <apex:inputField value="{!userContact.Phone}"/><br/>
+                <apex:commandButton value="Update" action="{!updateContact}"/>
+            </apex:form>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:page>

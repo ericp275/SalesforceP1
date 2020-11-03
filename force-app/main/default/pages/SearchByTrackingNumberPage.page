@@ -1,0 +1,23 @@
+<apex:page showHeader="false" controller="SearchByTrackingNumber" sidebar="false">
+    <apex:form style="background-color: white;">
+        <div style="text-align: center; margin: 10px;">
+        	<apex:outputLabel style="font-size: 18px; font-weight: bold;" for="TrackingNumInput" value="Track Your Package"/>
+        	<br/>
+        	<apex:inputText value="{!trackingNumber}" id="trackingNumInput"/>
+        	<br/>
+        	<apex:commandButton value="Package Status" action="{!search}" style="background-color: #009EDB; border: none; color: white; text-align: center; display: inline-block; padding: 4px; background-image: none; margin: 4px;"/>
+        	<apex:commandButton value="Clear Package" action="{!clear}" style="background-color: #009EDB; border: none; color: white; text-align: center; display: inline-block; padding: 4px; background-image: none; margin: 4px;"/>
+          
+        </div>
+        <div style="background-color: white;">
+        	<apex:pageBlock title="Package Details">         
+            	<apex:pageBlockTable value="{!mail}" var="m">
+                	<apex:column style="background-color: #009EDB; color: white;" value="{!m.Name}"/>
+                	<apex:column value="{!m.Id}"/>
+                	<apex:column style="background-color: #009EDB; color: white;" value="{!m.Delivery_Status__c}"/>
+                	<apex:column value="{!m.Distribution_Center__c}"/>
+            	</apex:pageBlockTable>
+        	</apex:pageBlock>
+        </div>
+    </apex:form>
+</apex:page>

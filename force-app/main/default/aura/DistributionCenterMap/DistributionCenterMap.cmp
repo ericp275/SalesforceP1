@@ -1,0 +1,21 @@
+<aura:component controller="DistributionCenterMap_Controller" implements="flexipage:availableForAllPageTypes" description="This component is used to display all POTS distribution centers within the United States, or on a region-by-region basis.">
+    <aura:attribute name="northeastStates" type="String[]" default="['CT','MA','ME','NH','NJ','NY','PA','RI','VT']" description="List of states in the Northeastern United States."/>
+    <aura:attribute name="midwestStates" type="String[]" default="['IA','IL','IN','KS','MI','MN','MO','NE','ND','OH','SD','WI']" description="List of states in the Midwestern United States."/>
+    <aura:attribute name="southStates" type="String[]" default="['AL','AR','DE','FL','GA','KY','LA','MD','MS','NC','OK','SC','TN','TX','VA','WV']" description="List of states in the Southern United States."/>
+    <aura:attribute name="westStates" type="String[]" default="['AK','AZ','CA','CO','HI','ID','MT','NM','NV','OR','UT','WA','WY']" description="List of states in the Western United States."/>
+   
+    <aura:attribute name="region" type="String" description="Selected Region"/>
+   
+    <aura:attribute name="mapMarkers" type="Object" description="Markers for the map."/>
+   
+    <aura:attribute name="markersTitle" type="String" default="Distribution Centers" description="Title for the map legend"/>
+   
+    
+    <lightning:card>
+        <lightning:map mapMarkers="{!v.mapMarkers}" markersTitle="{!v.markersTitle}">
+        </lightning:map>
+    </lightning:card>
+    
+        
+    
+</aura:component>

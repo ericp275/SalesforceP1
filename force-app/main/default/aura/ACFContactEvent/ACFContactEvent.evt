@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event to pass account and contact ID's">
+    <aura:attribute name="AccId" type="string" />
+    <aura:attribute name="ConId" type="string" />
+</aura:event>

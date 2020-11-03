@@ -1,0 +1,3 @@
+<design:component>
+	<design:attribute name="region" datasource="All Regions,Northwest,MidWest,South,West" label="Select Distribution Center Region"/>
+</design:component>

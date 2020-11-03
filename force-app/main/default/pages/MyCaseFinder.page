@@ -1,0 +1,19 @@
+<apex:page controller="CaseController">
+    <apex:form >
+       <apex:pageBlock >
+           <apex:outputLabel for="nameInput" value="Whose case would you like to find"/>
+           <apex:inputText value="{!nameCase}" id="nameInput" />
+           <br/>
+           <apex:commandButton value="Find Matching Cases" action="{!returnMatchingCases}"/>
+           <br/>
+           <apex:outputText value="{!errorMessage}"/>
+        </apex:pageBlock>
+    </apex:form>
+
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!matchingCase}" var="a">
+            <apex:column value="{!a.Contact.Name}"/>
+            <apex:column value="{!a.Priority}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

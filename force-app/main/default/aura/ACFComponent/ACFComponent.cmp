@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable">
+    
+    <div class="slds-grid slds-gutters slds-grid_allign-center">
+    	<div class="slds-col slds-size_10-of-12">
+            <c:ACFCases/>	
+        </div>	
+    </div>
+    
+	<div class="slds-grid slds-gutters slds-wrap slds-grid_allign-center">
+    	<div class="slds-col slds-size_5-of-12">
+            <c:ACFAccounts/>	
+        </div>	
+
+    <div class="slds-col slds-size_5-of-12">
+            <c:ACFContacts/>	
+    </div>	
+    </div>
+</aura:component>

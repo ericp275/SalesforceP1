@@ -1,0 +1,23 @@
+<aura:component controller="ACFExerciseController">
+    <!--Handlers-->
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:handler event="c:ACFAccountEvent" action="{!c.HanldleAccountEvent}"/> 
+    <aura:handler event="c:ACFContactEvent" action="{!c.HanldleContactEvent}"/> 
+    
+    
+    <!-- attributes -->
+    <aura:attribute name="contacts" type="List"/>
+    <aura:attribute name="columns" type="List"/>
+	<aura:attribute name="maxRowSelection" type="Integer" default="1"/>
+
+   
+    <!-- Display Content -->
+    <div style="height: 300px">
+        <lightning:datatable
+                columns="{!v.contacts}"
+                data="{!v.contacts}"
+                keyField="id"
+                maxRowSelection="{!v.maxRowSelection}"/>
+
+    </div>
+</aura:component>
